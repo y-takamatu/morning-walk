@@ -1,0 +1,12 @@
+<header>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+    <%= link_to  (root_path) do%>
+      <div class="navbar-brand d-flex align-items-center" >
+        <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"></svg><i class="fas fa-walking"></i>
+        <strong>MorningWalk</strong>
+      </div>
+    <% end %>
+      <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+  </div>
+</header>
