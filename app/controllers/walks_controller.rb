@@ -13,6 +13,6 @@ class WalksController < ApplicationController
 
   private
   def walk_params
-    params.require(:walk).permit(:time,:content)
+    params.require(:walk).permit(:time,:content,:image)
   end
 end
