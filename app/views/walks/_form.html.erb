@@ -1,0 +1,20 @@
+<%= form_with model: @walk, local: true do |f|%>
+  <div class="field">
+    <%= f.label :time, "散歩時間" %><br />
+    <%= f.text_field :time, id:"prototype_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "一言" %><br />
+    <%= f.text_area :content, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "朝散歩の画像" %><br />
+    <%= f.file_field :image, id:"prototype_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

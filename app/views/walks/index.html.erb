@@ -35,8 +35,7 @@
             <h1 class="fw-light">朝散歩から1日を。</h1>
             <p class="lead text-muted">散歩でみんなと繋がろう</p>
             <p>
-              <a href="#" class="btn btn-primary my-2">散歩したらクリック</a>
-              
+              <%= link_to "散歩",new_walk_path, class: "btn btn-primary my-2"%>
             </p>
           </div>
         </div>
@@ -47,44 +46,7 @@
         <div class="container my-5" id="skill">
           <h2 class= "py-4 text-dark">みんなの散歩記録</h2>
           <div class="row row-cols-1 row-cols-md-3">
-            <div class="col mb-4">
-              <div class="card">
-                <img src="https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg" class="card-img-top px-3 mb-3" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Sample</h5>
-                  <p class="card-text">SampleSampleSampleSampleSampleSampleSampleSampleSampleSample</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg" class="card-img-top px-3 mb-3" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">日時：2021/2/21</h5>
-                  <p class="card-text">散歩時間：30分</p>
-                  <p class="card-text">体調：最高</p>
-                  <p class="card-text">今日の一言：今日もよく歩いた</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg" class="card-img-top px-3 mb-3" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Sample</h5>
-                  <p class="card-text">SampleSampleSampleSampleSampleSampleSampleSampleSampleSample</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg" class="card-img-top px-3 mb-3" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Sample</h5>
-                  <p class="card-text">SampleSampleSampleSampleSampleSampleSampleSampleSampleSample</p>
-                </div>
-              </div>
-            </div>
+            <%= render partial: 'walk', collection:  @walks %>
           </div>
       </div>
     </main>
