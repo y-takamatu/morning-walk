@@ -1,6 +1,6 @@
 <div class="col mb-4">
   <div class="card">
-    <img src="https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg" class="card-img-top px-3 mb-3" alt="...">
+     <%= image_tag walk.image, class: 'card-img-top px-3 mb-3' if walk.image.attached?%>
       <div class="card-body">
         <h5 class="card-title">今日の一言：<%= walk.content%></h5>
         <p class="card-text">散歩時間：<%= walk.time%>分</p>
