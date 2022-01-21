@@ -1,0 +1,24 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <div class="prototype__image">
+        <%= image_tag @walk.image.variant(resize: '500x500')%>
+      </div>
+      <div class="prototype__body">
+          <div class="prototype__detail">
+            <p class="detail__title">キャッチコピー</p>
+            <p class="detail__message">
+              <%= @walk.content %>
+            </p>
+          </div>
+          <div class="prototype__detail">
+            <p class="detail__title">コンセプト</p>
+            <p class="detail__message">
+              <%= @walk.time %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

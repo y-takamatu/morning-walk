@@ -1,0 +1,26 @@
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.prototype__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.prototype__image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.prototype__detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.detail__title{
+  font-size: 20px;
+  font-weight: bold;
+}
