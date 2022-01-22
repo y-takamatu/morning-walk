@@ -13,6 +13,8 @@ class WalksController < ApplicationController
 
   def show
     @walk = Walk.find(params[:id])
+    @comment  = Comment.new
+    @comments = @walk.comments
   end
 
   private
