@@ -1,24 +1,39 @@
-<main class="main">
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6  img-hidden">
+      <%= image_tag @walk.image, class: 'img-fluid' if @walk.image.attached?%>
+    </div>
+    <div class="col-md-6">
+      <h5>今日の一言：<%= @walk.content%></h5>
+      <p>散歩時間：<%= @walk.time%>分</p>
+      <p>日時：<%= @walk.created_at%></p>
+    </div>
+  </div>
+</div>
+
+<%# <main class="main">
   <div class="inner">
     <div class="prototype__wrapper">
       <div class="prototype__image">
         <%= image_tag @walk.image.variant(resize: '500x500')%>
-      </div>
+      <%# </div>
       <div class="prototype__body">
           <div class="prototype__detail">
             <p class="detail__title">キャッチコピー</p>
             <p class="detail__message">
               <%= @walk.content %>
-            </p>
+            <%# </p>
           </div>
           <div class="prototype__detail">
             <p class="detail__title">コンセプト</p>
             <p class="detail__message">
-              <%= @walk.time %>
-            </p>
+              <%# <%= @walk.time %>
+            <%# </p>
           </div>
         </div>
-      </div>
+      </div> %> 
 
       <div class="prototype__comments">
         <div class="form-group">

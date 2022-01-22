@@ -9,8 +9,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
       <form class="d-flex">
-        <button class="btn btn-outline-success me-3"  type="submit">ログイン</button>
-        <button class="btn btn-outline-success" type="submit">ログイン</button>
+        <% if user_signed_in? %>
+          <%= link_to current_user.name, user_path(current_user.id) , class: "btn btn-outline-success me-3"%>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "btn btn-outline-success me-3"%>  
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-success me-3"%>
+        <% end %>
       </form>
       </div>
 </nav>
