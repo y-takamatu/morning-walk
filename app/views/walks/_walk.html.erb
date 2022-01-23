@@ -1,0 +1,13 @@
+<%=  link_to walk_path(walk) do%>
+  <div class="col-mb-3" >
+    <div class="card ">
+      <%= image_tag walk.image, class: 'card-img-top px-3 mb-3' if walk.image.attached?%>
+        <div class="card-body">
+          <h5 class="card-title">今日の一言：<%= walk.content%></h5>
+          <p class="card-text">散歩時間：<%= walk.time%>分</p>
+          <p class="card-text">日時：<%= walk.created_at%></p>
+        </div>
+    </div>
+  </div>
+<%end%>
+            
