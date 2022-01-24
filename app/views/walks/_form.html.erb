@@ -1,4 +1,9 @@
 <%= form_with model: @walk, local: true do |f|%>
+  <div class="time">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
   <div class="field">
     <%= f.label :time, "散歩時間" %><br />
     <%= f.text_field :time, id:"prototype_title" %>

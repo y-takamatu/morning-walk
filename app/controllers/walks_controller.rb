@@ -19,6 +19,6 @@ class WalksController < ApplicationController
 
   private
   def walk_params
-    params.require(:walk).permit(:time,:content,:image).merge(user_id: current_user.id)
+    params.require(:walk).permit(:time,:content,:start_time,:image).merge(user_id: current_user.id)
   end
 end
