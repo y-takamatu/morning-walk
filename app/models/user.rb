@@ -6,7 +6,11 @@ class User < ApplicationRecord
   
   has_many :walks
   has_many :comments
-  has_many :favorites, through: :likes, source: :walk
+  has_many :likes
+
+  def liked_by?(walk_id)
+    likes.where(walk_id: walk_id).exists?
+  end
 
   # def votable_for?(photo) # ←いいなボタンを押せるか判断
   #   photo && photo.user != self && !votes.exists?(photo_id: photo.id)

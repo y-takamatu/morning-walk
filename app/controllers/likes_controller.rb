@@ -1,10 +1,15 @@
 class LikesController < ApplicationController
   def create
-    Like.create(like_params)
+    like = Like.create(user_id: current_user.id,walk_id: params[:walk_id] )
+   
+      redirect_to walk_path(params[:walk_id])
+   
   end
 
-  private
-  def like_params
-    
+  def destroy
+    Like.find_by(user_id: current_user.id,walk_id: params[:walk_id] ).destroy
+    redirect_to walk_path(params[:walk_id])
   end
+
+
 end

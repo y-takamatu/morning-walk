@@ -15,6 +15,7 @@ class WalksController < ApplicationController
     @walk = Walk.find(params[:id])
     @comment  = Comment.new
     @comments = @walk.comments
+    @like = Like.new
   end
 
   private

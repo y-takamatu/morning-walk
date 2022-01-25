@@ -8,11 +8,19 @@
       <h5>今日の一言：<%= @walk.content%></h5>
       <p>散歩時間：<%= @walk.time%>分</p>
       <p>日時：<%= @walk.created_at%></p>
+      
+    
+      <% if current_user.liked_by?(@walk.id) %>
+          <%= link_to"いいねを解除" ,walk_like_path(@walk), method: :delete %> <%= @walk.likes.count %> 
+        <% else%>
+          <%= form_with(model:[@walk,@like],local: true)do |f|%>
+            <%= f.submit 'いいね！' %> <%= @walk.likes.count %> 
+          <% end %>
+     <% end %>
+
     </div>
   </div>
 </div>
-
-
       <div class="prototype__comments">
         <div class="form-group">
           <%= form_with(model:[@walk,@comment],local: true)do |f|%>
