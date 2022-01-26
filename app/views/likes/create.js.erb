@@ -1,2 +1,1 @@
-
-document.getElementById('walk').innerHTML = '<%= j(render @walk) %>'
+document.getElementById('walk_<%= @walk.id %>').innerHTML = '<%= j(render @walk) %>'

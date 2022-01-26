@@ -10,11 +10,17 @@
           <p class="card-text">日時：<%= walk.created_at%></p>
       <%end%>
           <% if current_user.liked_by?(walk.id) %>
-             <%= link_to "いいねを解除" ,walk_like_path(walk,walk.likes),method: :delete, remote: true %> <%= walk.likes.count %> 
+             <%= link_to walk_like_path(walk,walk.likes),class: "like-link",method: :delete, remote: true do %> 
+              <i class="fa fa-heart unlike-btn"></i>
+             <% end %>
+             <%= walk.likes.count %> 
           <% else %>
-            <%= form_with(model:[walk,@like]) do |f|%>
-            <%= f.submit 'いいね！' %> <%= walk.likes.count %> 
-            <% end %>
+              <%= link_to walk_likes_path(walk,walk.likes),class: "like-link",method: :post, remote: true do %> 
+              <i class="fa fa-heart like-btn"></i>
+             <% end %>
+            
+             <%= walk.likes.count %> 
+            
           <% end %>
        </div>  
     </div>
