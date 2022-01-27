@@ -1,13 +1,29 @@
-<%=  link_to walk_path(walk) do%>
+
   <div class="col-mb-3" >
     <div class="card ">
-      <%= image_tag walk.image, class: 'card-img-top px-3 mb-3' if walk.image.attached?%>
+      <%=  link_to walk_path(walk) do%>
+        <%= image_tag walk.image, class: 'card-img-top px-3 mb-3' if walk.image.attached?%>
+    
         <div class="card-body">
           <h5 class="card-title">今日の一言：<%= walk.content%></h5>
           <p class="card-text">散歩時間：<%= walk.time%>分</p>
           <p class="card-text">日時：<%= walk.created_at%></p>
-        </div>
+      <%end%>
+          <% if current_user.liked_by?(walk.id) %>
+             <%= link_to walk_like_path(walk,walk.likes),class: "like-link",method: :delete, remote: true do %> 
+              <i class="fa fa-heart unlike-btn"></i>
+             <% end %>
+             <%= walk.likes.count %> 
+          <% else %>
+              <%= link_to walk_likes_path(walk,walk.likes),class: "like-link",method: :post, remote: true do %> 
+              <i class="fa fa-heart like-btn"></i>
+             <% end %>
+            
+             <%= walk.likes.count %> 
+            
+          <% end %>
+       </div>  
     </div>
   </div>
-<%end%>
-            
+
+

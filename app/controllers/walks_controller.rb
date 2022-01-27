@@ -1,6 +1,7 @@
 class WalksController < ApplicationController
   def index
     @walks = Walk.all
+    @like = Like.new
   end
 
   def new
@@ -15,10 +16,11 @@ class WalksController < ApplicationController
     @walk = Walk.find(params[:id])
     @comment  = Comment.new
     @comments = @walk.comments
+    
   end
 
   private
   def walk_params
-    params.require(:walk).permit(:time,:content,:image).merge(user_id: current_user.id)
+    params.require(:walk).permit(:time,:content,:start_time,:image).merge(user_id: current_user.id)
   end
 end

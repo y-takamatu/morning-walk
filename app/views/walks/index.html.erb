@@ -46,7 +46,11 @@
         <div class="container my-5" id="skill">
           <h2 class= "py-4 text-dark">みんなの散歩記録</h2>
           <div class="row row-cols-1 row-cols-md-3">
-            <%= render partial: 'walk', collection:  @walks %>
+         <% @walks.each do |walk|%> 
+            <div id="walk_<%= walk.id %>">
+              <%= render 'walk', walk: walk %>
+            </div>
+          <% end %>
           </div>
       </div>
     </main>

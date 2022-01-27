@@ -1,0 +1,7 @@
+      <% if current_user.liked_by?(@walk.id) %>
+        <%= link_to"いいねを解除" ,walk_like_path(@walk), method: :delete %> <%= @walk.likes.count %> 
+      <% else %>
+        <%= form_with(model:[@walk,@like])do |f|%>
+          <%= f.submit 'いいね！' %> <%= @walk.likes.count %> 
+        <% end %>
+     <% end %>
