@@ -9,19 +9,21 @@
           <p class="card-text">散歩時間：<%= walk.time%>分</p>
           <p class="card-text">日時：<%= walk.created_at%></p>
       <%end%>
-          <% if current_user.liked_by?(walk.id) %>
-             <%= link_to walk_like_path(walk,walk.likes),class: "like-link",method: :delete, remote: true do %> 
-              <i class="fa fa-heart unlike-btn"></i>
-             <% end %>
-             <%= walk.likes.count %> 
-          <% else %>
-              <%= link_to walk_likes_path(walk,walk.likes),class: "like-link",method: :post, remote: true do %> 
-              <i class="fa fa-heart like-btn"></i>
-             <% end %>
-            
-             <%= walk.likes.count %> 
-            
-          <% end %>
+          
+            <% if user_signed_in? && current_user.liked_by?(walk.id) %>
+              <%= link_to walk_like_path(walk,walk.likes),class: "like-link",method: :delete, remote: true do %> 
+                <i class="fa fa-heart unlike-btn"></i>
+              <% end %>
+              <%= walk.likes.count %> 
+            <% else %>
+                <%= link_to walk_likes_path(walk,walk.likes),class: "like-link",method: :post, remote: true do %> 
+                <i class="fa fa-heart like-btn"></i>
+              <% end %>
+              
+              <%= walk.likes.count %> 
+              
+            <% end %>
+        
        </div>  
     </div>
   </div>
