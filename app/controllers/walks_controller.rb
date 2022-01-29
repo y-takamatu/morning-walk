@@ -8,15 +8,32 @@ class WalksController < ApplicationController
     @walk = Walk.new
   end
 
+  def edit
+    @walk = Walk.find(params[:id])
+  end
+
+  def update
+    Walk.update(walk_params)
+  end
+
   def create
     Walk.create(walk_params)
+  end
+
+  def create
+    Walk.create(walk_params)
+  end
+
+  def destroy
+    walk = Walk.find(params[:id])
+    walk.destroy if current_user.id == walk.user.id
+    redirect_to root_path
   end
 
   def show
     @walk = Walk.find(params[:id])
     @comment  = Comment.new
     @comments = @walk.comments
-    
   end
 
   private

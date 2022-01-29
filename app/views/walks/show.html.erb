@@ -1,43 +1,60 @@
+<div class="walk-show">
+  <div class="walk-box">
+    <h2 class="name">
+      <%= @walk.start_time %>
+    </h2>
+    <div class="walk-img-content">
+      <%= image_tag @walk.image ,class:"walk-box-img" %>
+    </div>
+    <div class="walk-price-box">
+      <span class="walk-price">
+        <%= @walk.content  %>
+      </span>
+      <span class="walk-postage">
+        <%= @walk.time %>
+      </span>
+    </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6  img-hidden">
-      <%= image_tag @walk.image, class: 'img-fluid' if @walk.image.attached?%>
-    </div>
-    <div class="col-md-6">
-      <h5>今日の一言：<%= @walk.content%></h5>
-      <p>散歩時間：<%= @walk.time%>分</p>
-      <p>日時：<%= @walk.created_at%></p>
-      <%# <p id="walk">
-        <%= render 'walk_like', walk: @walk %>
-      <%# </p> %>
-    </div>
-  </div>
-</div>
-      <div class="prototype__comments">
-        <div class="form-group">
-          <%= form_with(model:[@walk,@comment],local: true)do |f|%>
-            <div class="field">
-              <%= f.label :message, "コメント" %><br />
-              <%= f.text_field :message, id:"comment_content" %>
-            </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <% end %>
-       </div>
-          
-        <ul class="comments_lists">
-          <% @comments.each do |comment| %>
-            <li class="comments_list">
-               <%= comment.message%>
-               <%# <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>
-            </li>
-          <% end%>
-        </ul>
+  
+      <% if user_signed_in? && current_user.id == @walk.user.id %>
+        <%= link_to "編集", edit_walk_path(@walk), method: :get, class: "walk-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", walk_path(@walk), method: :delete, class:"walk-destroy" %>
+      <% end %>
+    
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な商品の通報</span>
       </div>
     </div>
   </div>
-</main>
 
-
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+  <div class="links">
+    <a href="#" class="change-walk-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-walk-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  
+</div>
