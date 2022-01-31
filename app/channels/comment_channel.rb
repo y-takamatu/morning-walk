@@ -1,6 +1,7 @@
 class CommentChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "comment_channel" #追加
+    @walk = Walk.find(params[:walk_id]) 
+    stream_for @walk
   end
 
   def unsubscribed

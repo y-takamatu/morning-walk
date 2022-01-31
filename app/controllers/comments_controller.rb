@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @walk = Walk.find(params[:walk_id])
     if @comment.save
-      ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user}     
+      CommentChannel.broadcast_to @walk, { comment: @comment, user: @comment.user } 
     end
   end
 

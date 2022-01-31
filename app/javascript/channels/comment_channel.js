@@ -1,8 +1,12 @@
 import consumer from "./consumer"
-if(location.pathname.match(/\/walks\/\d/)){
- 
 
-  consumer.subscriptions.create("CommentChannel", {
+if(location.pathname.match(/\/walks\/\d/)){
+
+  consumer.subscriptions.create({
+    channel: "CommentChannel",
+    walk_id: location.pathname.match(/\d+/)[0]
+
+  }, {
     connected() {
       // Called when the subscription is ready for use on the server
     },
