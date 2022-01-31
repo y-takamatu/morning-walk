@@ -21,10 +21,6 @@ class WalksController < ApplicationController
     Walk.create(walk_params)
   end
 
-  def create
-    Walk.create(walk_params)
-  end
-
   def destroy
     walk = Walk.find(params[:id])
     walk.destroy if current_user.id == walk.user.id
