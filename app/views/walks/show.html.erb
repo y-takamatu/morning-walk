@@ -8,11 +8,15 @@
       <h5>日時：<%= @walk.start_time%></h5>
       <p>散歩時間：<%= @walk.time%>分</p>
       <p>今日の一言：<%= @walk.content%></p>
+      <div id="comments">
           <% @comments.each do |comment| %>
-            <p><%= comment.user.name%>：<%= comment.message%></p>            
+            <div class="comment">
+              <p><%= comment.user.name%>：<%= comment.message%></p>            
+            </div>
           <% end%>
+      </div>
       <div class="form-group">
-          <%= form_with(model:[@walk,@comment],local: true)do |f|%>
+          <%= form_with(model:[@walk,@comment],id: "comment-form")do |f|%>
             <div class="field">
               <%= f.label :message, "コメント" %><br />
               <%= f.text_field :message, id:"comment_content" %>

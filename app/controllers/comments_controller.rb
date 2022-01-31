@@ -3,9 +3,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to walk_path(params[:walk_id])
-    else
-      render :create
+      ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user}     
     end
   end
 
