@@ -1,234 +1,56 @@
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-.walk-show {
-  background-color: #f8f8f8;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5vh 0;
+.inner {
+  width: 1024px;
+  margin: 0 auto;
 }
 
-.walk-box {
-  background-color: #FFF;
-  width: 70vw;
-  min-width: 1200px;
-  padding: 10vh 15vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.prototype__wrapper{
+  min-height: calc(100vh - 161px);
 }
 
-.walk-box>.name {
-  text-align: center;
-  font-weight: bold;
-  font-size: 25px;
+.prototype__image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 16px 0;
 }
 
-.walk-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
-  object-fit: contain;
-}
-
-.walk-price-box {
-  margin: 25px 0px;
+.prototype__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 8px;
 }
 
-.walk-price-box>.walk-price {
-  font-size: 4vh;
-  font-weight: bold;
-}
-
-.walk-price-box>.walk-postage {
-  font-size: 16px;
-}
-
-
-.walk-red-btn {
-  text-align: center;
-  background-color: #ea352d;
-  font-size: 24px;
-  font-weight: bold;
-  color: #FFF;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.or-text {
+.detail__title{
   font-size: 20px;
-<<<<<<< Updated upstream
-}
-
-.walk-destroy {
-  background-color: lightgray;
-  text-align: center;
-  font-size: 24px;
-  color: black;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.walk-explain-box {
-  font-size: 18px;
-  margin: 40px 0px;
-  overflow-wrap: anywhere;
-}
-
-.detail-table {
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-=======
-}
-
-.walk-destroy {
-  background-color: lightgray;
-  text-align: center;
-  font-size: 24px;
-  color: black;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.walk-explain-box {
-  font-size: 18px;
-  margin: 40px 0px;
-  overflow-wrap: anywhere;
-}
-
-.detail-table {
-  margin-bottom: 30px;
-  width: 100%;
-}
-
->>>>>>> Stashed changes
-.detail-walk {
-  width: 20%;
-  background-color: #eee;
-  border: 1px solid #dedede;
-  font-size: 14px;
-  text-align: center;
-}
-
-.detail-value {
-  width: 80%;
-  padding: 20px;
-  border: 1px solid #dedede;
-  font-size: 14px;
-}
-
-.option {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
-}
-
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.report-flag-icon {
-  margin-right: 5px;
-}
-
-
-/* /商品の概要 */
-
-.comment-box {
-  width: 40vw;
-  background-color: #fff;
-  margin: 5vh 0;
-  text-align: center;
-}
-
-.comment-text {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  border: solid 2px #dedede;
-  resize: none;
-}
-
-.comment-warn {
-  padding: 10px;
-  font-size: 14px;
-  margin: 10px 0px;
-  text-align: left;
-}
-
-.comment-btn {
-  line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
-  color: #fff;
-  width: 50%;
-  min-width: 150px;
-  font-size: 18px;
-  border-radius: 100px;
-  margin-bottom: 2vh;
-}
-
-.comment-flag {
-  display: flex;
-  justify-content: center;
-}
-
-.comment-flag-icon {
-  margin: 10px 5px 0 0;
-}
-
-.links {
-  display: flex;
-  justify-content: space-between;
-  width: 50vw;
-
-}
-
-.change-walk-btn {
-  font-size: 30px;
-  text-decoration: none;
-  color: #3CCACE;
-}
-
-.another-walk {
-  display: block;
-  margin: 30px 0px 8px;
-  color: #3CCACE;
-  text-decoration: none;
   font-weight: bold;
-  font-size: 23px;
+}
+
+.comments_lists{
+  padding-left: 20px;
+}
+
+.comments_list{
+  list-style-type: square;
+  padding-bottom: 5px;
+}
+
+.comment_user{
+  font-size: 16px;
+  color: #999;
+  text-decoration: underline;
+}
+
+.field{
+  margin: 10px 0;
+}
+
+.actions{
+  margin-bottom: 40px;
+}
+
+
+.prototype__comments{
+  background-color: #f6f6f6;
+  padding: 20px;
+  margin: 28px 0 40px 0;
 }
