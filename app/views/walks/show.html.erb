@@ -5,17 +5,12 @@
       <%= image_tag @walk.image, class: 'img-fluid' if @walk.image.attached?%>
     </div>
     <div class="col-md-6">
-      <h5>今日の一言：<%= @walk.content%></h5>
+      <h5>日時：<%= @walk.start_time%></h5>
       <p>散歩時間：<%= @walk.time%>分</p>
-      <p>日時：<%= @walk.created_at%></p>
-      <ul class="comments_lists">
+      <p>今日の一言：<%= @walk.content%></p>
           <% @comments.each do |comment| %>
-            <li class="comments_list">
-               <%= comment.message%>
-               <%# <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>
-            </li>
+            <p><%= comment.user.name%>：<%= comment.message%></p>            
           <% end%>
-        </ul>
       <div class="form-group">
           <%= form_with(model:[@walk,@comment],local: true)do |f|%>
             <div class="field">
@@ -32,10 +27,6 @@
     </div>
   </div>
 </div>
-
-      <div class="prototype__comments">
-        
-      </div>
     </div>
   </div>
 </main>
