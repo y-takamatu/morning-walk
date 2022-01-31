@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 .walk-show {
   background-color: #f8f8f8;
   width: 100vw;
@@ -61,6 +64,7 @@
 
 .or-text {
   font-size: 20px;
+<<<<<<< Updated upstream
 }
 
 .walk-destroy {
@@ -83,6 +87,30 @@
   width: 100%;
 }
 
+=======
+}
+
+.walk-destroy {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
+.walk-explain-box {
+  font-size: 18px;
+  margin: 40px 0px;
+  overflow-wrap: anywhere;
+}
+
+.detail-table {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+>>>>>>> Stashed changes
 .detail-walk {
   width: 20%;
   background-color: #eee;

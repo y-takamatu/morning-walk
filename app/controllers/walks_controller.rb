@@ -17,6 +17,7 @@ class WalksController < ApplicationController
   end
 
   def create
+    @walks = current_user.walks
     Walk.create(walk_params)
   end
 
