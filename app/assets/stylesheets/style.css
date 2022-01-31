@@ -1,0 +1,26 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+.field{
+  margin: 10px 0;
+}
+
+.form__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.page-heading {
+  font-size: 30px;
+  margin-bottom: 28px;
+}
+
+.actions{
+  margin-bottom: 40px;
+}
