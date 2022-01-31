@@ -2,10 +2,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @walk = Walk.find(params[:walk_id])
     if @comment.save
-      redirect_to walk_path(params[:walk_id])
-    else
-      render :create
+      CommentChannel.broadcast_to @walk, { comment: @comment, user: @comment.user } 
     end
   end
 
