@@ -28,6 +28,7 @@
   </head>
   <body>
     <main>
+    
     <div class ="top-view">
       <section class="py-5 text-left container">
         <div class="row py-lg-5">
@@ -43,9 +44,9 @@
       </section>
     </div>
     <!-- カード -->
-        <div class="container my-5" id="skill">
+        <div class="container my-5 bg-white" id="skill">
           <h2 class= "py-4 text-dark">みんなの散歩記録</h2>
-          <div class="row row-cols-1 row-cols-md-3">
+          <div class="row row-cols-md-3 ">
          <% @walks.each do |walk|%> 
             <div id="walk_<%= walk.id %>">
               <%= render 'walk', walk: walk %>
