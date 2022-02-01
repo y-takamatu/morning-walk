@@ -1,3 +1,7 @@
 .top-view {
   background-image: url("/images/top.jpg");
 }
+
+.card-text {
+  text-decoration: none;
+}

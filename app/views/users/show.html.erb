@@ -1,15 +1,27 @@
+
+
+
 <div class ="container">
-  <div class ="row">
-    <%= month_calendar events: @walks do |date,walks| %>
-      <%= date.day %>  
-      <% walks.each do |walk| %>
-        <div>
-          <%= walk.content %>
-        </div>
-      <% end %>
-     <% end %>
+  <h1 class="mx-auto" style="width: 400px;">勇飛さんの散歩記録</h1>
+  <div class ="row mt-5">
+    <div class ="col-8">
+      <%= @walks[1].user.name%>
+        <%= month_calendar events: @walks do |date,walks| %>
+          <%= date.day %>  
+          <% walks.each do |walk| %>
+            <div>
+              <%= walk.content %>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+    <div class ="col-4">
+        <h1 class ="mt-5">今月の散歩日数<h1><%= @walks.count%>日
+        <h1 class ="mt-5">総散歩時間<h1><%= @walks.all.sum(:time)%>分
+    </div>
   </div>
 </div>
+
 <div class="container my-5" id="skill">
   <div class="row row-cols-1 row-cols-md-3">
     <%= render partial: 'walks/walk', collection:  @user.walks %>

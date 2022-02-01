@@ -1,13 +1,14 @@
 
-  <div class="col-mb-3" >
-    <div class="card ">
-      <%=  link_to walk_path(walk) do%>
+  <div class="col-mb-3 " >
+    <div class="card mt-3">
+      <%=  link_to walk_path(walk),class:"text-dark text-decoration-none" do%>
         <%= image_tag walk.image, class: 'card-img-top px-3 mb-3' if walk.image.attached?%>
     
-        <div class="card-body">
+        <div class="card-body text-dark">
+          <h5 class="card-text">日時：<%= walk.start_time.year%>年<%= walk.start_time.month%>月<%= walk.start_time.day%>日</p>
           <h5 class="card-title">今日の一言：<%= walk.content%></h5>
           <p class="card-text">散歩時間：<%= walk.time%>分</p>
-          <p class="card-text">日時：<%= walk.created_at%></p>
+          
       <%end%>
           
             <% if user_signed_in? && current_user.liked_by?(walk.id) %>
