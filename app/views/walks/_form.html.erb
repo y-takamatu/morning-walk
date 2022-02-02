@@ -4,8 +4,8 @@
 
 
   <div class="times">
-    <%= f.label :start_time %>
-    <%= f.datetime_select :start_time %>
+    <%= f.label :start_time,"日付" %><br />
+    <%= f.date_field :start_time, value: Time.now.strftime("%Y-%m-%d") %>
   </div>
 
   <div class="field">

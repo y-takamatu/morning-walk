@@ -7,7 +7,7 @@ class Walk < ApplicationRecord
   with_options presence: true do
     validates :time
     validates :content
-    validates :start_time
+    validates :start_time, uniqueness: true
   end
 
 end

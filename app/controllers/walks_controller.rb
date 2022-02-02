@@ -31,7 +31,7 @@ class WalksController < ApplicationController
   end
 
   def destroy
-      @walk.destroy if current_user.id == walk.user.id 
+      @walk.destroy if current_user.id == @walk.user.id 
       redirect_to root_path
 
   end
