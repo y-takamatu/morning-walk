@@ -36,7 +36,11 @@
           <h1 class="fw-light">朝散歩から1日を。</h1>
             <p class="lead text-muted">散歩でみんなと繋がろう</p>
             <p>
-              <%= link_to "散歩したらクリック",new_walk_path, class: "btn btn-primary my-2"%>
+              <% if user_signed_in?%>
+                <%= link_to "散歩したらクリック",new_walk_path, class: "btn btn-primary my-2"%>
+              <% else %>
+                <%= link_to "ログインしてください",new_walk_path, class: "btn btn-primary my-2"%>
+              <% end %>
             </p>
           </div>
         </div>

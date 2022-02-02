@@ -1,6 +1,8 @@
 class WalksController < ApplicationController
+ before_action :authenticate_user!, except: [:index, :show]
+ before_action :set_item, only: [:show, :edit, :update, :destroy]
   def index
-    @walks = Walk.all
+    @walks = Walk.order(created_at: :desc)
     @like = Like.new
   end
 
@@ -9,26 +11,32 @@ class WalksController < ApplicationController
   end
 
   def edit
-    @walk = Walk.find(params[:id])
+    redirect_to action: :index if current_user.id != @walk.user.id
   end
 
   def update
-    Walk.update(walk_params)
+    if  @walk.update(walk_params)
+      redirect_to walk_path(params[:id]) 
+    end
   end
 
   def create
+    @walk = Walk.new(walk_params)
     @walks = current_user.walks
-    Walk.create(walk_params)
+   if @walk.save
+    render :create
+   else
+    render :new 
+   end
   end
 
   def destroy
-    walk = Walk.find(params[:id])
-    walk.destroy if current_user.id == walk.user.id
-    redirect_to root_path
+      @walk.destroy if current_user.id == @walk.user.id 
+      redirect_to root_path
+
   end
 
   def show
-    @walk = Walk.find(params[:id])
     @comment  = Comment.new
     @comments = @walk.comments
   end
@@ -36,5 +44,9 @@ class WalksController < ApplicationController
   private
   def walk_params
     params.require(:walk).permit(:time,:content,:start_time,:image).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @walk = Walk.find(params[:id])
   end
 end
