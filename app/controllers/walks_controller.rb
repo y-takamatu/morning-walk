@@ -1,6 +1,8 @@
 class WalksController < ApplicationController
+ before_action :authenticate_user!, except: [:index, :show]
+
   def index
-    @walks = Walk.all
+    @walks = Walk.order(created_at: :desc)
     @like = Like.new
   end
 
@@ -10,10 +12,14 @@ class WalksController < ApplicationController
 
   def edit
     @walk = Walk.find(params[:id])
+    redirect_to action: :index if current_user.id != @walk.user.id
   end
 
   def update
-    Walk.update(walk_params)
+    walk = Walk.find(params[:id])
+    if  walk.update(walk_params)
+      redirect_to walk_path(params[:id]) 
+    end
   end
 
   def create
@@ -22,9 +28,9 @@ class WalksController < ApplicationController
   end
 
   def destroy
-    walk = Walk.find(params[:id])
-    walk.destroy if current_user.id == walk.user.id
-    redirect_to root_path
+      walk = Walk.find(params[:id])
+      walk.destroy if current_user.id == walk.user.id 
+  
   end
 
   def show
