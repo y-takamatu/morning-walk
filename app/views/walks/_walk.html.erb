@@ -5,9 +5,10 @@
         <%= image_tag walk.image, class: 'card-img-top px-3 mb-3' if walk.image.attached?%>
     
         <div class="card-body text-dark">
-          <h5 class="card-text">日時：<%= walk.start_time.year%>年<%= walk.start_time.month%>月<%= walk.start_time.day%>日</p>
-          <h5 class="card-title">今日の一言：<%= walk.content%></h5>
-          <p class="card-text">散歩時間：<%= walk.time%>分</p>
+          <h5 class="card-title"><%= walk.user.name%>さんの投稿</h5>
+          <h6 class="card-text">日時：<%= walk.start_time.year%>年<%= walk.start_time.month%>月<%= walk.start_time.day%>日</h6>
+          <h6 class="card-title">今日の一言：<%= walk.content%></h6>
+          <h6 class="card-text">散歩時間：<%= walk.time%>分</h6>
           
       <%end%>
           

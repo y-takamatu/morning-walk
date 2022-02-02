@@ -1,4 +1,8 @@
 <%= form_with model: @walk, local: true do |f|%>
+
+<%= render 'shared/error_messages', model: f.object %>
+
+
   <div class="times">
     <%= f.label :start_time %>
     <%= f.datetime_select :start_time %>
@@ -6,7 +10,7 @@
 
   <div class="field">
     <%= f.label :time, "散歩時間" %><br />
-    <%= f.text_field :time, id:"prototype_title" %>
+    <%= f.text_field :time,:size=>"9", id:"prototype_title" %>分
   </div>
 
   <div class="field">

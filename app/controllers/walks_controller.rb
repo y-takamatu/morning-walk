@@ -21,8 +21,13 @@ class WalksController < ApplicationController
   end
 
   def create
+    @walk = Walk.new(walk_params)
     @walks = current_user.walks
-    Walk.create(walk_params)
+   if @walk.save
+    render :create
+   else
+    render :new 
+   end
   end
 
   def destroy
