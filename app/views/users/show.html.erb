@@ -6,7 +6,7 @@
   <div class ="row mt-5">
     <div class ="col-8">
       <%  if @walks.present?%>
-      <%= @walks[1].user.name%>
+      <%= @user.name%>
         <%= month_calendar events: @walks do |date,walks| %>
           <%= date.day %>  
           <% walks.each do |walk| %>
