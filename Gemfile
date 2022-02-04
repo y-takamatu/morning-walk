@@ -61,3 +61,4 @@ gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 gem 'simple_calendar', '~> 2.0' 
 gem 'font-awesome-sass'
+gem "aws-sdk-s3", require: false
