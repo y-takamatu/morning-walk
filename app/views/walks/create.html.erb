@@ -1,6 +1,8 @@
 <div class ="container">
   <div class ="row">
-    <div class ="h1">よくできました！</div>
+
+
+  
     <%= month_calendar events: @walks do |date,walks| %>
       <%= date.day %>  
       <% walks.each do |walk| %>
