@@ -1,29 +1,37 @@
+ 
+
 <%= form_with model: @walk, local: true do |f|%>
-
 <%= render 'shared/error_messages', model: f.object %>
+<div class="card" style="width: 50rem; height: 35rem;">
+  <div class="row">
 
 
-  <div class="times">
+
+
+  <h4 class="times mt-3">
     <%= f.label :start_time,"日付" %><br />
-    <%= f.date_field :start_time, value: Time.now.strftime("%Y-%m-%d") %>
-  </div>
+    <%= f.date_field :start_time, value: Time.now.strftime("%Y-%m-%d") , class: "mt-2" %>
+  </h4>
 
-  <div class="field">
-    <%= f.label :time, "散歩時間" %><br />
-    <%= f.text_field :time,:size=>"9", id:"prototype_title" %>分
-  </div>
+  <h4 class="field mt-3">
+    <%= f.label :time, "散歩時間"%><br />
+    <%= f.text_field :time,:size=>"9", id:"prototype_title", class: "mt-2" %>分
+  </h4>
 
-  <div class="field">
-    <%= f.label :content, "一言" %><br />
-    <%= f.text_area :content, class: :form__text, id:"prototype_concept" %>
-  </div>
+  <h4 class="field mt-3">
+    <%= f.label :content, "散歩を終えてひとこと" %><br />
+    <%= f.text_area :content, class: :form__text, id:"prototype_concept" , class: "mt-2"%>
+  </h4>
 
-  <div class="field">
+  <h4 class="field mt-3">
     <%= f.label :image, "朝散歩の画像" %><br />
-    <%= f.file_field :image, id:"prototype_image" %>
-  </div>
+    <%= f.file_field :image, id:"prototype_image", class: "mt-2" %>
+  </h4>
 
-  <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
-  </div>
+  <h4 class="actions mt-3">
+    <%= f.submit "投稿する", class: :form__btn %>
+  </h4>
+</div>
+</div>
 <% end %>
+

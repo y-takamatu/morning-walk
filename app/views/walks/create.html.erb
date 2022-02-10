@@ -1,14 +1,26 @@
 <div class ="container">
-  <div class ="row">
-    <div class ="h1">よくできました！</div>
-    <%= month_calendar events: @walks do |date,walks| %>
-      <%= date.day %>  
-      <% walks.each do |walk| %>
-        <div>
-          <%= walk.content %>
-        </div>
-      <% end %>
-     <% end %>
+     <h1 class="mx-auto mt-5" style="width: 400px;">勇飛さんの散歩記録</h1>
+  <div class ="row mt-5">
+    <div class ="col-6">
+      <%  if @walks.present?%>
+        <%= month_calendar events: @walks do |date,walks| %>
+          <%= date.day %>  
+          <% walks.each do |walk| %>
+            <div>
+              <%= walk.content %>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+    <% end %>
+    <div class ="col-6 ">
+        <h1 class ="mt-4">今月の散歩記録<h1>
+    
+        <h4 class ="mt-5">総散歩日数：<%= @walks.all.sum(:id)%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%= @walks.all.sum(:time)%>分</h4>
+        <h1 class ="mt-5">先月の散歩記録<h1>
+        <h4 class ="mt-5">総散歩日数：<%= @walks.all.sum(:id)%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%= @walks.all.sum(:time)%>分</h4>
+    </div>
   </div>
 </div>
-
