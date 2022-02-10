@@ -1,14 +1,7 @@
 
-<% @walks.each do |walk|%>
-<% this_week = Date.today.all_week %>
-<% if (this_month.include?(Date.parse(hoge[:created_at].to_s)))%>
-<%  @data += walk[:name] + "_" + walk[:time] %>
-<% end %>
-<% end %>
-<%= @data %>
 <div class ="container">
      <h1 class="mx-auto mt-5" style="width: 400px;">勇飛さんの散歩記録</h1>
-  <div class ="row mt-5">
+  <div class ="row mt-5"  style="width: 100rem;">
     <div class ="col-6">
       <%  if @walks.present?%>
         <%= month_calendar events: @walks do |date,walks| %>

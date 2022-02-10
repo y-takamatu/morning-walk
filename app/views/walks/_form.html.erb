@@ -1,6 +1,11 @@
-<%= form_with model: @walk, local: true do |f|%>
+ 
 
+<%= form_with model: @walk, local: true do |f|%>
 <%= render 'shared/error_messages', model: f.object %>
+<div class="card" style="width: 50rem; height: 35rem;">
+  <div class="row">
+
+
 
 
   <h4 class="times mt-3">
@@ -26,4 +31,7 @@
   <h4 class="actions mt-3">
     <%= f.submit "投稿する", class: :form__btn %>
   </h4>
+</div>
+</div>
 <% end %>
+
