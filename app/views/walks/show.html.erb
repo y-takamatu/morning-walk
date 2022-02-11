@@ -18,11 +18,11 @@
       <h3 class="mt-3">散歩時間：<%= @walk.time%>分</h3>
       <h3 class="mt-3">今日の一言：<%= @walk.content%></h3>
   
-      <div id="comments">
+      <div class =" box18" id="comments ">
           <p>コメント一覧：</p>
           <% @comments.each do |comment| %>
             <div class="comment">
-              <p><%= comment.user.name%>：<%= comment.message%></p>            
+              <p><%= comment.user.name%>：<%= comment.message%><p>            
             </div>
           <% end%>
       </div>

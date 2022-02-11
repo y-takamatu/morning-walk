@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     
 
     @user = User.find(params[:id])
-    @this_month =@user.walks.group("MONTH(created_at)")
+    @this_month =@user.walks.group("MONTH(start_time)")
 
     @walks = @user.walks
   end
