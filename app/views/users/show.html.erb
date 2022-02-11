@@ -1,7 +1,7 @@
 
 <div class ="container">
-     <h1 class="mx-auto mt-5" style="width: 400px;">勇飛さんの散歩記録</h1>
-  <div class ="row mt-5"  style="width: 100rem;">
+     <h1 class="mx-auto mt-5" style="width: 500px;"><%=@user.name%>さんの散歩記録</h1>
+  <div class ="row mt-5 box3">
     <div class ="col-6">
       <%  if @walks.present?%>
         <%= month_calendar events: @walks do |date,walks| %>
@@ -15,19 +15,23 @@
     </div>
     <% end %>
     <div class ="col-6 ">
-        <h1 class ="mt-4">今月の散歩記録<h1>
-    
-        <h4 class ="mt-5">総散歩日数：<%= @walks.all.sum(:id)%>日</h4>
-        <h4 class ="mt-5">総散歩時間：<%= @walks.all.sum(:time)%>分</h4>
-        <h1 class ="mt-5">先月の散歩記録<h1>
-        <h4 class ="mt-5">総散歩日数：<%= @walks.all.sum(:id)%>日</h4>
-        <h4 class ="mt-5">総散歩時間：<%= @walks.all.sum(:time)%>分</h4>
+      <div class=" box18">
+        <h1>今月の散歩記録<h1>
+        
+        <h4 class ="mt-5">総散歩日数：<%= @this_month.count[Date.today.month]%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%= @this_month.sum(:time)[Date.today.month]%>分</h4>
+      </div>
+      <div class ="box18">
+        <h1>先月の散歩記録<h1>
+       <h4 class ="mt-5">総散歩日数：<%= @this_month.count[Date.today.month-1]%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%= @this_month.sum(:time)[Date.today.month-1]%>分</h4>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container my-5" id="skill">
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-md-3 box3">
     <%= render partial: 'walks/walk', collection:  @user.walks %>
   </div>
 </div>

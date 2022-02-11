@@ -29,12 +29,12 @@
   <body>
     <main>
     
-    <div class ="top-view">
-      <section class="py-5 text-left container">
+    <div class ="top-view mt-2">
+      <div class="py-5 text-left container"  style="height:500px; background:url(images/top.jpg); background-size:cover;">
         <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">朝散歩から1日を。</h1>
-            <p class="lead text-muted">散歩でみんなと繋がろう</p>
+          <div class="col-lg-8 col-md-8 mx-auto">
+          <h1>朝散歩から充実の1日を。</h1>
+            <p class="lead ">記録するたび習慣に。</p>
             <p>
               <% if user_signed_in?%>
                 <%= link_to "散歩したらクリック",new_walk_path, class: "btn btn-primary my-2"%>
@@ -44,13 +44,13 @@
             </p>
           </div>
         </div>
-
-      </section>
+      </div>
     </div>
+    
     <!-- カード -->
         <div class="container my-5 bg-white" id="skill">
-          <h2 class= "py-4 text-dark">みんなの散歩記録</h2>
-          <div class="row row-cols-md-3 ">
+          <h2 class= "py-4">みんなの散歩記録</h2>
+          <div class="row row-cols-md-3  box3">
          <% @walks.each do |walk|%> 
             <div id="walk_<%= walk.id %>">
               <%= render 'walk', walk: walk %>
