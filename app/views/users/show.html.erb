@@ -17,14 +17,13 @@
     <div class ="col-6 ">
       <div class=" box18">
         <h1>今月の散歩記録<h1>
-        
-        <h4 class ="mt-5">総散歩日数：<%= @this_month.count[Date.today.month]%>日</h4>
-        <h4 class ="mt-5">総散歩時間：<%= @this_month.sum(:time)[Date.today.month]%>分</h4>
+        <h4 class ="mt-5">総散歩日数：<%= @month_record.count[Date.today.month]%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%= @month_record.sum(:time)[Date.today.month]%>分</h4>
       </div>
       <div class ="box18">
         <h1>先月の散歩記録<h1>
-       <h4 class ="mt-5">総散歩日数：<%= @this_month.count[Date.today.month-1]%>日</h4>
-        <h4 class ="mt-5">総散歩時間：<%= @this_month.sum(:time)[Date.today.month-1]%>分</h4>
+       <h4 class ="mt-5">総散歩日数：<%= @month_record.count[Date.today.month-1]%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%=@month_record.sum(:time)[Date.today.month-1]%>分</h4>
       </div>
     </div>
   </div>

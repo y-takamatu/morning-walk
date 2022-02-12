@@ -15,8 +15,9 @@ class WalksController < ApplicationController
   end
 
   def update
-    if  @walk.update(walk_params)
+    if @walk.update(walk_params)
       redirect_to walk_path(params[:id]) 
+    else render :edit
     end
   end
 
