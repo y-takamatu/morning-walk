@@ -9,8 +9,8 @@
 
 
   <h4 class="times mt-3">
-    <%= f.label :start_time,"日付" %><br />
-    <%= f.date_field :start_time, value: Time.now.strftime("%Y-%m-%d") , class: "mt-2" %>
+    <%= f.label :start_time,"日時（朝散歩＝朝10時まで）" %><br />
+    <%= f.datetime_field :start_time, value: Time.now.strftime('%Y-%m-%dT%T') , class: "mt-2" %>
   </h4>
 
   <h4 class="field mt-3">

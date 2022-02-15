@@ -33,9 +33,8 @@
       <div class="py-5 text-left container">
         <div class="row py-lg-5">
           <div class=" col-lg-8 col-md-8 mx-auto">
-            <div class= "top-contents mt-3">
-              <h1>朝散歩から充実の1日を。</h1>
-              <h3 >散歩するたび仲間が増える。</h3>
+            <div clas s= "top-contents mt-3">
+              <h1>朝の散歩は人生を変える。</h1>
             </div>
             <p class ="mt-5">
               <% if user_signed_in?%>
@@ -55,6 +54,7 @@
           <div class="row row-cols-md-3  box3">
          <% @walks.each do |walk|%> 
             <div id="walk_<%= walk.id %>">
+              
               <%= render 'walk', walk: walk %>
             </div>
           <% end %>

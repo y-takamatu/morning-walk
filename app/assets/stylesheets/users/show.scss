@@ -20,7 +20,7 @@
   .current-month {}
 
   .has-events {
-    background: #98fb98;
+    background-color: #FFFFC0;
   }
 }
 
@@ -66,4 +66,12 @@
 .heading_box p {
   margin: 0; 
   padding: 0;
+}
+
+.top-view {
+  background-image: url(images/coffee.jpg);
+  background-size:  cover;
+      
+  background-position:bottom;  
+  height:300px;
 }
