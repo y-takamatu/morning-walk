@@ -3,6 +3,7 @@
     <div class="mt-3 card">
       <%=  link_to walk_path(walk),class:"text-dark text-decoration-none" do%>
         <h5 class="card-title text-center"><%= walk.user.name%>さんの投稿</h5>
+        
         <%= image_tag walk.image, class: 'card-img-top px-3 mb-3' if walk.image.attached?%>
         <div class="card-body text-dark">
           <h6 class="card-text">日時：<%= walk.start_time.year%>年<%= walk.start_time.month%>月<%= walk.start_time.day%>日</h6>
