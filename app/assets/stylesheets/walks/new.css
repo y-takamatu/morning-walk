@@ -44,7 +44,31 @@
   display: contents;
 }
 
+.content-top {
+  background-image: url(images/coffee.jpg);
+  background-size:  cover;
+  background-position:bottom;  
+  height:350px;
+  position: relative;
+}
 
+.content-text {
+  position: absolute;
+  top:80px;
+  left:230px;
+  font-size: 40px;
+}
+
+.box3 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #2c2c2f;
+  background: #faf7f3;/*背景色*/
+}
+.box3 p {
+  margin: 0; 
+  padding: 0;
+}
 
 /* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 

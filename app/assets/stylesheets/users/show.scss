@@ -20,7 +20,7 @@
   .current-month {}
 
   .has-events {
-    background: #98fb98;
+    background-color: #FFFFC0;
   }
 }
 
@@ -32,7 +32,7 @@
   margin:2em 0;
   position: relative;
   padding: 0.25em 1em;
-  border: solid 2px #ffcb8a;
+  border: solid 2px #87CEFA;
   border-radius: 3px 0 3px 0;
 }
 .box18:before,.box18:after
@@ -41,7 +41,7 @@
   position: absolute;
   width:10px;
   height: 10px;
-  border: solid 2px #ffcb8a;
+  border: solid 2px #87CEFA;
   border-radius: 50%;
 }
 .box18:after {
@@ -61,9 +61,24 @@
   padding: 0.5em 1em;
   margin: 2em 0;
   color: white;
-  background: #ffcb8a;/*背景色*/
+  background: #87CEFA;/*背景色*/
 }
 .heading_box p {
   margin: 0; 
   padding: 0;
+}
+
+.content-top {
+  background-image: url(images/coffee3.jpg);
+  background-size:  cover;
+  background-position:bottom;  
+  height:350px;
+  position: relative;
+}
+
+.content-text {
+  position: absolute;
+  top:80px;
+  left:230px;
+  font-size: 40px;
 }

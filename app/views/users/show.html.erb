@@ -1,14 +1,20 @@
 
+<div class="container content-top " >
+  <h1 class ="content-text"><%=@user.name%>さんの散歩記録</h1>
+</div>
+
 <div class ="container">
-     <h1 class="mx-auto mt-5" style="width: 500px;"><%=@user.name%>さんの散歩記録</h1>
+   
   <div class ="row mt-5 box3">
-    <div class ="col-6">
+    <div class ="col-6" style="background-color:white;">
       <%  if @walks.present?%>
         <%= month_calendar events: @walks do |date,walks| %>
           <%= date.day %>  
           <% walks.each do |walk| %>
-            <div>
-              <%= walk.content %>
+            <div class ="text-center">
+              <% if walk.start_time.strftime("%I").to_i >= 4 && walk.start_time.strftime("%I").to_i <= 10 %>
+                <img src="/assets/hayaoki2.png" class="img-fluid" alt="">
+              <% end %>    
             </div>
           <% end %>
         <% end %>
@@ -17,14 +23,13 @@
     <div class ="col-6 ">
       <div class=" box18">
         <h1>今月の散歩記録<h1>
-        
-        <h4 class ="mt-5">総散歩日数：<%= @this_month.count[Date.today.month]%>日</h4>
-        <h4 class ="mt-5">総散歩時間：<%= @this_month.sum(:time)[Date.today.month]%>分</h4>
+        <h4 class ="mt-5">総散歩日数：<%= @month_record.count[Date.today.month]%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%= (@month_record.sum(:time)[Date.today.month]).to_i / 60 %>時間<%= (@month_record.sum(:time)[Date.today.month]).to_i % 60%>分</h4>
       </div>
       <div class ="box18">
         <h1>先月の散歩記録<h1>
-       <h4 class ="mt-5">総散歩日数：<%= @this_month.count[Date.today.month-1]%>日</h4>
-        <h4 class ="mt-5">総散歩時間：<%= @this_month.sum(:time)[Date.today.month-1]%>分</h4>
+       <h4 class ="mt-5">総散歩日数：<%= @month_record.count[Date.today.month-1]%>日</h4>
+        <h4 class ="mt-5">総散歩時間：<%=@month_record.sum(:time)[Date.today.month-1].to_i / 60 %>時間<%=@month_record.sum(:time)[Date.today.month-1].to_i % 60 %>分</h4>
       </div>
     </div>
   </div>

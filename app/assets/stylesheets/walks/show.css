@@ -55,3 +55,22 @@
   margin: 28px 0 40px 0;
 }
 
+
+.content-top {
+  background-image: url(images/coffee3.jpg);
+  background-size:  cover;
+  background-position:bottom;  
+  height:370px;
+  position: relative;
+}
+
+.content-text {
+  position: absolute;
+  top:80px;
+  left:230px;
+  font-size: 40px;
+  /* color: #6594e0;
+  border-bottom: dashed 2px #6594e0; */
+  /* border-bottom: double 5px #FFC778; */
+  background: linear-gradient(transparent 70%, #a7d6ff 70%);
+}

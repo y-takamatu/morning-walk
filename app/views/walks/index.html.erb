@@ -29,15 +29,14 @@
   <body>
     <main>
     
-    <div class ="top-view mt-2">
-      <div class="py-5 text-left container"  style="height:500px; background:url(images/top.jpg); background-size:cover;">
+    <div class ="top-view mt-2" style="height:500px; background:url(images/top.jpg); background-size:cover;">
+      <div class="py-5 text-left container">
         <div class="row py-lg-5">
           <div class=" col-lg-8 col-md-8 mx-auto">
-            <div class= "top-contents mt-3">
-              <h1>朝散歩から充実の1日を。</h1>
-              <h3 >散歩するたび仲間が増える。</h3>
+            <div clas s= "top-contents mt-3">
+              <h1>朝の散歩は人生を変える。</h1>
             </div>
-            <p>
+            <p class ="mt-5">
               <% if user_signed_in?%>
                 <%= link_to "散歩したらクリック",new_walk_path, class: "btn btn-primary my-2 p-1"%>
               <% else %>
@@ -55,6 +54,7 @@
           <div class="row row-cols-md-3  box3">
          <% @walks.each do |walk|%> 
             <div id="walk_<%= walk.id %>">
+              
               <%= render 'walk', walk: walk %>
             </div>
           <% end %>
