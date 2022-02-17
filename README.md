@@ -45,10 +45,8 @@ https://docs.google.com/spreadsheets/d/1okqhUDbNDVzRCqnddqWx9yc4Apwopo8e3pdwBJBu
 
 
 ## ②ユーザー同士で交流
-・コメント機能<br>
-・お気に入り機能
-[![Image from Gyazo](https://i.gyazo.com/5284ea126703ee826548676247ba9469.jpg)](https://gyazo.com/5284ea126703ee826548676247ba9469)
-
+・コメント機能やお気に入り機能で、励まし合えます<br>
+[![Image from Gyazo](https://i.gyazo.com/26475ed61b3251bf3b3bbcf88ac8c045.png)](https://gyazo.com/26475ed61b3251bf3b3bbcf88ac8c045)
 # 実装した機能
 |  機能|  gem |
 | ---- | ---- |
