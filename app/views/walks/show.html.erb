@@ -2,46 +2,46 @@
 <div class="container content-top " >
   <h1 class ="content-text"><%=@walk.user.name%>さんの投稿</h1>
 </div>
+
 <div class="container " >
   <div class="card box3">
-  
-  <div class="row">
-    <div class="col-md-6  img-hidden">
-      <%= image_tag @walk.image, class: 'img-fluid' if @walk.image.attached?%>
-      <form class="d-flex mt-3">
-      <% if user_signed_in?  && current_user.id == @walk.user.id%>
-        <%= link_to "編集", edit_walk_path(@walk), class: "col-md-2  mr-5 btn btn-primary me-3 my-3"%>
-        <%= link_to "削除", walk_path(@walk),method: :delete,class: "col-md-2 btn btn-warning me-3 my-3"%>
-      <% end %>
-      </form>
-    </div>
-    <div class="col-md-6">
-      <h3 class="mt-2">日時：<%= @walk.start_time.year%>年<%= @walk.start_time.month%>月<%= @walk.start_time.day%>日</h3>
-      <h3 class="mt-3">散歩時間：<%= @walk.time%>分</h3>
-      <h3 class="mt-3">今日の一言：<%= @walk.content%></h3>
-  
-      <div class =" box18" id="comments ">
-          <p>コメント一覧：</p>
-          <% @comments.each do |comment| %>
-            <div class="comment">
-              <p><%= comment.user.name%>：<%= comment.message%><p>            
-            </div>
-          <% end%>
+    <div class="row">
+      <div class="col-md-6  img-hidden">
+        <%= image_tag @walk.image, class: 'img-fluid' if @walk.image.attached?%>
+        <form class="d-flex mt-3">
+        <% if user_signed_in?  && current_user.id == @walk.user.id%>
+          <%= link_to "編集", edit_walk_path(@walk), class: "col-md-2 text-nowrap mr-5 btn btn-primary me-3 my-3"%>
+          <%= link_to "削除", walk_path(@walk),method: :delete,class: "col-md-2 text-nowrap btn btn-warning me-3 my-3"%>
+        <% end %>
+        </form>
       </div>
-      <div class="form-group">
-          <%= form_with(model:[@walk,@comment],id: "comment-form")do |f|%>
-            <div class="field">
-              <%= f.label :message, "コメント" %><br />
-              <%= f.text_field :message, id:"comment_content" %>
-            </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <% end %>
-       </div>
+      <div class="col-md-6">
+        <h3 class="mt-2">日時：<%= @walk.start_time.year%>年<%= @walk.start_time.month%>月<%= @walk.start_time.day%>日</h3>
+        <h3 class="mt-3">散歩時間：<%= @walk.time%>分</h3>
+        <h3 class="mt-3">今日の一言：<%= @walk.content%></h3>
+    
+        <div class =" box18" id="comments ">
+            <p>コメント一覧：</p>
+            <% @comments.each do |comment| %>
+              <div class="comment">
+                <p><%= comment.user.name%>：<%= comment.message%></p>            
+              </div>
+            <% end%>
+        </div>
+          <div class="form-group">
+            <%= form_with(model:[@walk,@comment],id: "comment-form")do |f|%>
+              <div class="field">
+                <%= f.label :message, "コメント" %><br />
+                <%= f.text_field :message, id:"comment_content" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "送信する", class: :form__btn  %>
+              </div>
+            <% end %>
+          </div>
+      </div>
     </div>
-  </div>
-</div>  
+  </div>  
 </div>
 
 
