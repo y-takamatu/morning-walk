@@ -10,8 +10,8 @@
         <%= image_tag @walk.image, class: 'img-fluid' if @walk.image.attached?%>
         <form class="d-flex mt-3">
         <% if user_signed_in?  && current_user.id == @walk.user.id%>
-          <%= link_to "編集", edit_walk_path(@walk), class: "col-md-2  mr-5 btn btn-primary me-3 my-3"%>
-          <%= link_to "削除", walk_path(@walk),method: :delete,class: "col-md-2 btn btn-warning me-3 my-3"%>
+          <%= link_to "編集", edit_walk_path(@walk), class: "col-md-2 text-nowrap mr-5 btn btn-primary me-3 my-3"%>
+          <%= link_to "削除", walk_path(@walk),method: :delete,class: "col-md-2 text-nowrap btn btn-warning me-3 my-3"%>
         <% end %>
         </form>
       </div>
