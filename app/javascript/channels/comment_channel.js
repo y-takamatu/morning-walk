@@ -20,7 +20,7 @@ if(location.pathname.match(/\/walks\/\d/)){
       const html = `
         <div class="comment">
           <p>${data.user.name}： ${data.comment.message}</p>
-        </div>`
+        </div> `
       const comments = document.getElementById("comments")
       comments.insertAdjacentHTML('beforeend', html)
       const commentForm = document.getElementById("comment-form")

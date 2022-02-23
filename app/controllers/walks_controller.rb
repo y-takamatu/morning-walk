@@ -22,8 +22,10 @@ class WalksController < ApplicationController
   end
 
   def create
+    @user = User.find(current_user.id)    
     @walk = Walk.new(walk_params)
     @walks = current_user.walks
+    @month_record = @walks.group("MONTH(start_time)")
    if @walk.save
     render :create
    else
