@@ -13,7 +13,7 @@
           <% walks.each do |walk| %>
             <div class ="text-center">
               <% if walk.start_time.strftime("%I").to_i >= 4 && walk.start_time.strftime("%I").to_i <= 10 %>
-                <img src="/assets/hayaoki2.png" class="img-fluid" alt="">
+                <%=image_tag "hayaoki2.png" ,class:"img-fluid"  %>
               <% end %>    
             </div>
           <% end %>
